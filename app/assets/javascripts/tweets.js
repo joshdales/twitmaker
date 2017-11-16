@@ -5,6 +5,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
   newTweet.addEventListener('submit', function(e) {
     e.preventDefault();
-    
+    $.ajax({
+      url: newTweet.action,
+      method: newTweet.method,
+      dataType: 'html',
+      data: $(newTweet).serialize()
+    })
   })
 })
