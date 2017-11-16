@@ -6,8 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var tweets = document.querySelector('.tweets');
 
   newTweet.addEventListener('keydown', function(e) {
-       if (e.keyCode === 13 && e.altKey === true){
-      } else if (e.keyCode == 13) {
+       if (e.keyCode == 13 && !e.altKey) {
         e.preventDefault();
         createTweet.click();
   }})
