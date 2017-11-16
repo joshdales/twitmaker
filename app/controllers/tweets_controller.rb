@@ -16,7 +16,7 @@ class TweetsController < ApplicationController
             redirect_to root_url
           end
         end
-        format.json { render json: @tweet }
+        format.json { render json: @tweet.to_json }
       end
 
     else
