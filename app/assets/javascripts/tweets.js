@@ -8,8 +8,10 @@ document.addEventListener('DOMContentLoaded', function() {
     $.ajax({
       url: newTweet.action,
       method: newTweet.method,
-      dataType: 'html',
+      dataType: 'json',
       data: $(newTweet).serialize()
+    }).done(function(data) {
+      console.log(data);
     })
   })
 })
