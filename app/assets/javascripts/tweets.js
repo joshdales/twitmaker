@@ -2,4 +2,9 @@
 // All this logic will automatically be available in application.js.
 document.addEventListener('DOMContentLoaded', function() {
   var newTweet = document.getElementById('new_tweet');
+
+  newTweet.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+  })
 })
