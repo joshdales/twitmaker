@@ -8,7 +8,17 @@ class TweetsController < ApplicationController
     @tweet = Tweet.new(tweet_params)
 
     if @tweet.save
-      redirect_to tweets_path
+      respond_to do |format|
+        format.html do
+          if request.xhr?
+            render partial: 'tweet', locals: { tweet: @tweet }
+          else
+            redirect_to root_url
+          end
+        end
+        format.json { render json: @tweet.to_json }
+      end
+
     else
       render :index
     end
